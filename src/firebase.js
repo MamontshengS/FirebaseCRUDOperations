@@ -1,6 +1,8 @@
-import * as firebase from "firebase";
+import  firebase from "firebase";
 import "firebase/database";
 import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+
 
 let config = {
   apiKey: "AIzaSyDzeYx3Ate6ud3HBKW2-P9gX7yij3jq-t8",
