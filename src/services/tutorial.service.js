@@ -1,26 +1,27 @@
-import firebase from "../firebase";
+import { getDatabase, ref, push, update, remove } from 'firebase/database';
+import { database } from '../firebase'; // Assuming this imports your Firebase configuration
 
-const db = firebase.ref("/tutorials");
+const db = getDatabase(database);
 
 class TutorialDataService {
   getAll() {
-    return db;
+    return ref(db, '/tutorials');
   }
 
   create(tutorial) {
-    return db.push(tutorial);
+    return push(ref(db, '/tutorials'), tutorial);
   }
 
   update(key, value) {
-    return db.child(key).update(value);
+    return update(ref(db, `/tutorials/${key}`), value);
   }
 
   delete(key) {
-    return db.child(key).remove();
+    return remove(ref(db, `/tutorials/${key}`));
   }
 
   deleteAll() {
-    return db.remove();
+    return remove(ref(db, '/tutorials'));
   }
 }
 
