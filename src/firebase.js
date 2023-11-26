@@ -2,7 +2,7 @@ import * as firebase from "firebase";
 import "firebase/database";
 import { initializeApp } from "firebase/app";
 
-const config = {
+let config = {
   apiKey: "AIzaSyDzeYx3Ate6ud3HBKW2-P9gX7yij3jq-t8",
   authDomain: "fir-77b36.firebaseapp.com",
   databaseURL: "https://fir-77b36-default-rtdb.firebaseio.com",
@@ -13,5 +13,4 @@ const config = {
 };
 
 firebase.initializeApp(config);
-const db = getFirestore(app);
-export {db};
+export default firebase.database();
