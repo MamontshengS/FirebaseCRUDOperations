@@ -4,25 +4,25 @@ import { database } from '../firebase'; // Assuming this imports your Firebase c
 const db = getDatabase(database);
 
 class TutorialDataService {
-  getAll() {
+ getAll() {
     return ref(db, '/tutorials');
-  }
+ }
 
-  create(tutorial) {
+ create(tutorial) {
     return push(ref(db, '/tutorials'), tutorial);
-  }
+ }
 
-  update(key, value) {
+ update(key, value) {
     return update(ref(db, `/tutorials/${key}`), value);
-  }
+ }
 
-  delete(key) {
+ delete(key) {
     return remove(ref(db, `/tutorials/${key}`));
-  }
+ }
 
-  deleteAll() {
+ deleteAll() {
     return remove(ref(db, '/tutorials'));
-  }
+ }
 }
 
 export default new TutorialDataService();

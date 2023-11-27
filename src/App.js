@@ -1,10 +1,12 @@
-import React, { Component } from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
 
-import AddTutorial from "./components/add-tutorial.component";
-import TutorialsList from "./components/tutorial-list.component";
+const React = require("react");
+const { Component } = React;
+const { Routes, Route, Link } = require("react-router-dom");
+require("bootstrap/dist/css/bootstrap.min.css");
+require("./App.css");
+
+const AddTutorial = require("./components/add-tutorial.component");
+const TutorialsList = require("./components/tutorial-list.component");
 
 class App extends Component {
   render() {
